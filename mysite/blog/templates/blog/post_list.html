@@ -7,20 +7,13 @@
             <h1><a href="/"> Blog HarryTech</a></h1>
         </div>
 
-        <div>
-            <p>meu amorzao o4739420472 publicado: 21.06.2020, 20:42</p>
-            <h2><a href="">Meu primeiro post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-                 Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo,
-                  tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </div>
-
-        <div>
-            <p>publicado: 21.06.2020, 20:42</p>
-            <h2><a href="">Meu segundo post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis 
-                vestibulum. Donec id elit non mi porta gravida at eget metus. 
-                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{post.published_date}} </p>
+                <h2><a href=""> {{post.title}} </a></h2>    
+                <p> {{post.text|linebreaksbr}} </p>    
+            </div>
+            {{ post }}
+        {% endfor %}
     </body>
 </html>
