@@ -42,8 +42,3 @@ def post_edit(request, pk):
      else:
          form = PostForm(instance=post)
      return render(request, 'blog/post_edit.html', {'form': form})
-
-def abrir_imagem(request, pk):
-    image = get_object_or_404(Post.image, pk=pk)
-
-    return render(request, 'blog/imagem.html', {'image': image})
